@@ -1,4 +1,4 @@
-{#!/bin/bash)
+#!/bin/bash
 now=$(date +"%T")
 echo "Script Executed at : $now"
 
