@@ -21,6 +21,18 @@ fi
 rm -rf hardware/qcom/gps
 git clone https://github.com/sonyxperiadev/hardware-qcom-gps-sdm845 hardware/qcom/gps
 
+#Nuke Json (Already declared)
+rm -rf device/sony/common/hardware/json-c
+
+rm -rf vendor/qcom/opensource/bluetooth 
+https://github.com/sonyxperiadev/vendor-qcom-opensource-bluetooth vendor/qcom/opensource/bluetooth
+
+rm -rf hardware/qcom/media
+git clone https://github.com/sonyxperiadev/hardware-qcom-media-sdm845 hardware/qcom/media
+
+rm -rf hardware/qcom/display 
+git clone https://github.com/sonyxperiadev/hardware-qcom-display hardware/qcom/display
+
 
 now=$(date +"%T")
 echo "Script Finished at : $now"
