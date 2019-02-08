@@ -1,7 +1,8 @@
 #!/bin/bash
+RED='\033[0;31m'
 now=$(date +"%T")
 echo "Script Executed at : $now"
-MISSING="Missing Repo was found and is now being fixed"
+MISSING="${RED}Missing Repo was found and is now being fixed"
 if [ ! -d vendor/qcom/opensource/interfaces ]
 then
     rm -rf vendor/qcom/opensource/interfaces
