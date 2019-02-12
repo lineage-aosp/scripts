@@ -30,7 +30,7 @@ rm -rf vendor/qcom/opensource/bluetooth
 git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-bluetooth vendor/qcom/opensource/bluetooth
 
 rm -rf hardware/qcom/media
-https://github.com/SonyAosp/platform_hardware_qcom_media hardware/qcom/media
+git clone https://github.com/SonyAosp/platform_hardware_qcom_media hardware/qcom/media
 
 
 
