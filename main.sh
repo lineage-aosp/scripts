@@ -7,7 +7,7 @@ MISSING="${RED}Missing Repo was found and is now being fixed${NC}"
 if [ ! -d vendor/qcom/opensource/interfaces ]
 then
     rm -rf vendor/qcom/opensource/interfaces
-    git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-interfaces vendor/qcom/opensource/interface    
+    git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-interfaces vendor/qcom/opensource/interfaces    
     echo -e $MISSING
     pwd
 fi
