@@ -32,8 +32,8 @@ git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-bluetooth vend
 rm -rf hardware/qcom/media
 git clone https://github.com/SonyAosp/platform_hardware_qcom_media hardware/qcom/media
 
-rm -rf hardware/qcom/media
-git clone https://github.com/SonyAosp/platform_hardware_qcom_audio hardware/qcom/media
+rm -rf hardware/qcom/audio
+git clone https://github.com/SonyAosp/platform_hardware_qcom_audio hardware/qcom/audio
 
 
 now=$(date +"%T")
