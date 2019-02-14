@@ -3,23 +3,14 @@ RED='\033[0;31m'
 NC='\033[0m'
 now=$(date +"%T")
 echo "Script Executed at : $now"
-MISSING="${RED}Missing Repo was found and is now being fixed${NC}"
-if [ ! -d vendor/qcom/opensource/interfaces ]
-then
-    rm -rf vendor/qcom/opensource/interfaces
-    git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-interfaces vendor/qcom/opensource/interfaces    
-    echo -e $MISSING
-    pwd
-fi
 
-if [ ! -d vendor/qcom/opensource/dataservices ]
-   then 
-   rm -rf vendor/qcom/opensource/dataservices
-   git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-dataservices vendor/qcom/opensource/dataservices
-   echo -e $MISSING
-fi
+#This makes sure we use key sopd hals and modules 
+rm -rf vendor/qcom/opensource/interfaces
+git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-interfaces vendor/qcom/opensource/interfaces    
 
-# this happens even if the directory does exist
+rm -rf vendor/qcom/opensource/dataservices
+git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-dataservices vendor/qcom/opensource/dataservices
+
 rm -rf hardware/qcom/gps
 git clone https://github.com/SonyAosp/platform_hardware_qcom_sdm845_gps hardware/qcom/gps
 
@@ -34,7 +25,6 @@ git clone https://github.com/SonyAosp/platform_hardware_qcom_media hardware/qcom
 
 rm -rf hardware/qcom/audio
 git clone https://github.com/SonyAosp/platform_hardware_qcom_audio hardware/qcom/audio
-
 
 now=$(date +"%T")
 echo "Script Finished at : $now"
