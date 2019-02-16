@@ -5,8 +5,8 @@ now=$(date +"%T")
 echo "Script Executed at : $now"
 
 #This makes sure we use key sopd hals and modules 
-rm -rf vendor/qcom/opensource/interfaces
-git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-interfaces vendor/qcom/opensource/interfaces    
+#As we dont use sonyt interfaces this is needed 
+export ALLOW_MISSING_DEPENDENCIES=true
 
 rm -rf vendor/qcom/opensource/dataservices
 git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-dataservices vendor/qcom/opensource/dataservices
