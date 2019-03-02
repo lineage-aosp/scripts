@@ -8,6 +8,12 @@ echo "Script Executed at : $now"
 #As we dont use sonyt interfaces this is needed 
 export ALLOW_MISSING_DEPENDENCIES=true
 
+#Remove dir that sony will use in the future not currently or u will get conflicts
+
+rm -rf external/exfat
+rm -rf vendor/oss/interfaces/usb
+
+
 rm -rf vendor/qcom/opensource/dataservices
 git clone https://github.com/sonyxperiadev/vendor-qcom-opensource-dataservices vendor/qcom/opensource/dataservices
 
