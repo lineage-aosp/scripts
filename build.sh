@@ -8,17 +8,21 @@ echo "What is Your Sony Device Name:"
 read device
 devicedir=device/sony/$device
 
-echo "What is rom are you building this is for .mk files so see what is required:"
+echo "What is the rom are you building this is for .mk files so see what is required use AOSP CODENAME:"
 read rom
 
 cd $devicedir
-mv lineage_$device".mk" $rom"_"$device".mk"
+mv aosp_$device".mk" $rom"_"$device".mk"
 newmk= $rom"_"$device".mk"
 
-sed -i -e 's/lineage/'$rom/g $newmk
-sed -i -e 's/lineage/'$rom/g vendorsetup.sh
-sed -i -e 's/lineage/'$rom/g AndroidProducts.mk
+export TARGET_KERNEL_SOURCE = kernel/sony/msm-4.9/kernel
+
+sed -i -e 's/aosp/'$rom/g $newmk
+sed -i -e 's/aosp/'$rom/g vendorsetup.sh
+sed -i -e 's/aosp/'$rom/g AndroidProducts.mk
 cd "$OLDPWD"
+
+bash main.sh 
 
 . build/envsetup.sh
 lunch $device"_"$rom
