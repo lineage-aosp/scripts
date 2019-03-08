@@ -20,8 +20,8 @@ read rom
 cd $devicedir
 mv aosp_$modelnumber1".mk" $rom"_"$modelnumber1".mk"
 mv aosp_$modelnumber2".mk" $rom"_"$modelnumber2".mk"
-newmk1= $rom"_"$modelnumber".mk"
-newmk2= $rom"_"$modelnumber".mk"
+newmk1= $rom"_"$modelnumber1".mk"
+newmk2= $rom"_"$modelnumber2".mk"
 
 sed -i -e 's/aosp/'$rom/g $newmk1
 sed -i -e 's/aosp/'$rom/g $newmk2
