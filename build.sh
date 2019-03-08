@@ -4,8 +4,11 @@ sudo apt-get install figlet -y
 
 figlet Welcome To InfixRemixs Script
 
-echo "What is Your Sony Device model number (eg. h113):"
-read modelnumber
+echo "What is Your Sony Device model number single sim(eg. h2113):"
+read modelnumber1
+
+echo "What is Your Sony Device model number dualsim (eg. h3113):"
+read modelnumber2
 
 echo "What is Your Sony Device  (eg. pioneer):"
 read device
@@ -15,12 +18,13 @@ echo "What is the rom are you building this is for .mk files so see what is requ
 read rom
 
 cd $devicedir
-mv aosp_$device".mk" $rom"_"$modelnumber".mk"
-newmk= $rom"_"$modelnumber".mk"
+mv aosp_$modelnumber1".mk" $rom"_"$modelnumber1".mk"
+mv aosp_$modelnumber2".mk" $rom"_"$modelnumber2".mk"
+newmk1= $rom"_"$modelnumber".mk"
+newmk2= $rom"_"$modelnumber".mk"
 
-export TARGET_KERNEL_SOURCE = kernel/sony/msm-4.9/kernel
-
-sed -i -e 's/aosp/'$rom/g $newmk
+sed -i -e 's/aosp/'$rom/g $newmk1
+sed -i -e 's/aosp/'$rom/g $newmk2
 sed -i -e 's/aosp/'$rom/g vendorsetup.sh
 sed -i -e 's/aosp/'$rom/g AndroidProducts.mk
 cd "$OLDPWD"
@@ -28,6 +32,8 @@ cd "$OLDPWD"
 bash main.sh 
 
 . build/envsetup.sh
-lunch $modelnumber"_"$rom
+
+#Select ur device 
+lunch 
 
 mka bacon
