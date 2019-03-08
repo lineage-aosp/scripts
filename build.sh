@@ -23,6 +23,6 @@ cd "$OLDPWD"
 bash main.sh
 
 . build/envsetup.sh
-lunch $device"_"$rom
+lunch $rom"_"$device
 
 mka bacon
