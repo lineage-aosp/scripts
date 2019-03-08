@@ -13,7 +13,7 @@ read rom
 
 cd $devicedir
 mv lineage_$device".mk" $rom"_"$device".mk"
-newmk= $rom"_"$device".mk"
+newmk=$rom"_"$device".mk"
 
 sed -i -e 's/lineage/'$rom/g $newmk
 sed -i -e 's/lineage/'$rom/g vendorsetup.sh
