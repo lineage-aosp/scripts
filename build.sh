@@ -20,6 +20,8 @@ sed -i -e 's/lineage/'$rom/g vendorsetup.sh
 sed -i -e 's/lineage/'$rom/g AndroidProducts.mk
 cd "$OLDPWD"
 
+bash main.sh
+
 . build/envsetup.sh
 lunch $device"_"$rom
 
